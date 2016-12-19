@@ -14,14 +14,6 @@ const Songs = React.createClass({
       song_count: 0
     }
   },
-  loadSongs() {
-    $.get(
-      '/getsongs?page=' + this.props.params.page + '&elements=' + this.props.params.elements,
-      (data) => {
-        this.setState({songs_data: data.songs});
-      }
-    );
-  },
   songsCount() {
     $.get(
       '/songcount',

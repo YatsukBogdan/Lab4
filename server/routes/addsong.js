@@ -20,13 +20,16 @@ router.post('/', (req, res) => {
 
     var new_song = new song({
       id: songs_count,
-      videoId: req.body.videoId,
-      title: req.body.title,
-      artist: req.body.artist
+      url: req.body.url,
+      img: req.body.img,
+      album: req.body.album,
+      name: req.body.name,
+      artist: req.body.artist,
+      year: req.body.year
     });
 
     new_song.save((err) => {
-      if (err){
+      if (err) {
         logMessage(err);
         res.json({
           error: err

@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
   }
   console.log(req.body.word);
   song.find({
-    title: {
+    name: {
       $regex: new RegExp('^' + req.body.word, "i")
     }
   }, (err, songs) => {

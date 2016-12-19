@@ -13,7 +13,7 @@ function logMessage(msg) {
 router.post('/', (req, res) => {
 
   song.findOne({
-    id: req.body.id
+    id: req.body.database_id
   }, (err, _song) => {
     if (err) {
       res.json({error: err});
